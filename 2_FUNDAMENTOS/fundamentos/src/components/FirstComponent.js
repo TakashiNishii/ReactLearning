@@ -1,5 +1,7 @@
 // Exemplo de comentário em JSX
 
+import MyComponent from "./MyComponent";
+
 const FirstComponent = () => {
     // Fora do return, o comentário é um comentário de JS
     
@@ -13,6 +15,8 @@ const FirstComponent = () => {
             <h1>Meu primeiro componente</h1>
             
             <p className="teste">Meu texto</p>
+
+            <MyComponent />
         </div>
     );
 }

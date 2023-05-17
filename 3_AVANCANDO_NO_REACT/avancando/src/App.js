@@ -11,6 +11,11 @@ import CarDetails from './components/CarDetails';
 
 function App() {
   const [userName] = useState("Takashi");
+  const [cars] = useState([
+    { brand: "Ferrari", km: 0, color: "Amarela", newCar: true },
+    { brand: "KIA", km: 5000, color: "Cinza", newCar: false },
+    { brand: "BMW", km: 10000, color: "Branca", newCar: false },
+  ]);
   return (
     <div className="App">
       <h1>Avançando em React</h1>
@@ -25,8 +30,10 @@ function App() {
       <ManageData />
       <ListRender />
       <ConditionalRender />
+
       {/* Props */}
       <ShowUserName name={userName} />
+
       {/* Destructuring props */}
       <CarDetails brand="Ford" km="10000" color="Preto" newCar={false} />
 
@@ -34,6 +41,16 @@ function App() {
       <CarDetails brand="Fiat" km="5000" color="Branco" newCar={false} />
       <CarDetails brand="Volkswagen" km="0" color="Vermelho" newCar={true} />
 
+      {/* Loop em array de objetos */}
+      {cars.map((car, index) => (
+        <CarDetails
+          key={index}
+          brand={car.brand}
+          km={car.km}
+          color={car.color}
+          newCar={car.newCar}
+        />
+      ))}
     </div>
   );
 }

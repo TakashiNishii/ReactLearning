@@ -10,6 +10,8 @@ import CarDetails from "./components/CarDetails";
 import Fragment from "./components/Fragment";
 import Container from "./components/Container";
 import ExecuteFunction from "./components/ExecuteFunction";
+import Message from "./components/Message";
+import ChangeMessageState from "./components/ChangeMessageState";
 
 function App() {
   const [userName] = useState("Takashi");
@@ -22,6 +24,12 @@ function App() {
   function showMessage() {
     console.log("Função chamada do elemento pai!");
   }
+
+  const [message, setMessage] = useState("");
+
+  const handleMessage = (msg) => {
+    setMessage(msg);
+  };
 
   return (
     <div className="App">
@@ -73,6 +81,10 @@ function App() {
 
       {/* Executar função */}
       <ExecuteFunction myFunction={showMessage} />
+
+      {/* State lift */}
+      <Message msg={message} />
+      <ChangeMessageState handleMessage={handleMessage} />
     </div>
   );
 }

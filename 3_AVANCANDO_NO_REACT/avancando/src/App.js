@@ -1,14 +1,14 @@
+import { useState } from "react";
+import "./App.css";
 
-import { useState } from 'react';
-import './App.css';
-
-import City from './assets/city.jpg';
-import ConditionalRender from './components/ConditionalRender';
-import { ListRender } from './components/ListRender';
-import { ManageData } from './components/ManageData';
-import ShowUserName from './components/ShowUserName';
-import CarDetails from './components/CarDetails';
-import Fragment from './components/Fragment';
+import City from "./assets/city.jpg";
+import ConditionalRender from "./components/ConditionalRender";
+import { ListRender } from "./components/ListRender";
+import { ManageData } from "./components/ManageData";
+import ShowUserName from "./components/ShowUserName";
+import CarDetails from "./components/CarDetails";
+import Fragment from "./components/Fragment";
+import Container from "./components/Container";
 
 function App() {
   const [userName] = useState("Takashi");
@@ -55,6 +55,15 @@ function App() {
 
       {/* Fragment */}
       <Fragment propFragment="Teste" />
+
+      {/* Children */}
+      <Container myValue="Testing">
+        <p>Este é o conteúdo</p>
+      </Container>
+
+      <Container myValue="Testing 2">
+        <h5>Testando o container</h5>
+      </Container>
     </div>
   );
 }

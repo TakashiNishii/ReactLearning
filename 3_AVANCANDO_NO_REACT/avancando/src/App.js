@@ -9,6 +9,7 @@ import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
 import Fragment from "./components/Fragment";
 import Container from "./components/Container";
+import ExecuteFunction from "./components/ExecuteFunction";
 
 function App() {
   const [userName] = useState("Takashi");
@@ -17,6 +18,11 @@ function App() {
     { brand: "KIA", km: 5000, color: "Cinza", newCar: false },
     { brand: "BMW", km: 10000, color: "Branca", newCar: false },
   ]);
+
+  function showMessage() {
+    console.log("Função chamada do elemento pai!");
+  }
+
   return (
     <div className="App">
       <h1>Avançando em React</h1>
@@ -43,9 +49,9 @@ function App() {
       <CarDetails brand="Volkswagen" km="0" color="Vermelho" newCar={true} />
 
       {/* Loop em array de objetos */}
-      {cars.map((car, index) => (
+      {cars.map((car) => (
         <CarDetails
-          key={index}
+          key={car.id}
           brand={car.brand}
           km={car.km}
           color={car.color}
@@ -64,6 +70,9 @@ function App() {
       <Container myValue="Testing 2">
         <h5>Testando o container</h5>
       </Container>
+
+      {/* Executar função */}
+      <ExecuteFunction myFunction={showMessage} />
     </div>
   );
 }

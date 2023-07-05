@@ -60,7 +60,7 @@ const Game = ({
         <p>Letras já utilizadas:</p>
         {wrongLetters.map((letter, i) => (
           <span className="wrongLetter" key={i}>
-            {letter}
+            {letter},
           </span>
         ))}
       </div>

@@ -19,6 +19,11 @@
       "name": "Evaldo",
       "price": "666",
       "id": 4
+    },
+    {
+      "name": "Fone JBL",
+      "price": "350.00",
+      "id": 5
     }
   ]
 }

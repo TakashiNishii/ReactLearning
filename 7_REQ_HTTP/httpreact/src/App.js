@@ -6,7 +6,7 @@ function App() {
   const [products, setProducts] = useState([]);
 
   const [name, setName] = useState("");
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState("");
 
   // 1 - Resgatando dados da API
   useEffect(() => {
@@ -37,6 +37,14 @@ function App() {
       },
       body: JSON.stringify(product),
     });
+
+    // 3 - Carregamento dinâmico
+    const addedProduct = await res.json();
+
+    setProducts((prevProducts) => [...prevProducts, addedProduct]);
+
+    setName("");
+    setPrice("");
   };
 
   return (

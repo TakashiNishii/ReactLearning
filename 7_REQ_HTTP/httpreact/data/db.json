@@ -34,6 +34,11 @@
       "name": "Teste",
       "price": "123",
       "id": 7
+    },
+    {
+      "name": "Cadeira gamer",
+      "price": "2000.00",
+      "id": 8
     }
   ]
 }

@@ -56,6 +56,10 @@ function App() {
     setPrice("");
   };
 
+  const handleDelete = async (id) => {
+    httpConfig(items, "DELETE", id);
+  };
+
   return (
     <div className="App">
       <h1>Lista de Produtos</h1>
@@ -70,6 +74,12 @@ function App() {
               items.map((product) => (
                 <li key={product.id}>
                   {product.name} - R$ {product.price}
+                  {/* Button delete */}
+                  <input
+                    type="button"
+                    value="X"
+                    onClick={() => handleDelete(product.id)}
+                  />
                 </li>
               ))}
           </ul>

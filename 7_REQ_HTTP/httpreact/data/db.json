@@ -11,16 +11,6 @@
       "price": 90
     },
     {
-      "id": 3,
-      "name": "Boné aba reta",
-      "price": 29.9
-    },
-    {
-      "name": "Evaldo",
-      "price": "666",
-      "id": 4
-    },
-    {
       "name": "Fone JBL",
       "price": "350.00",
       "id": 5
@@ -29,11 +19,6 @@
       "name": "Microfone Red Dragon",
       "price": "0.00",
       "id": 6
-    },
-    {
-      "name": "Teste",
-      "price": "123",
-      "id": 7
     },
     {
       "name": "Cadeira gamer",

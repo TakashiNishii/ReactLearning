@@ -29,6 +29,11 @@
       "name": "Microfone Red Dragon",
       "price": "0.00",
       "id": 6
+    },
+    {
+      "name": "Teste",
+      "price": "123",
+      "id": 7
     }
   ]
 }

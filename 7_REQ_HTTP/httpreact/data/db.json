@@ -24,6 +24,11 @@
       "name": "Fone JBL",
       "price": "350.00",
       "id": 5
+    },
+    {
+      "name": "Microfone Red Dragon",
+      "price": "0.00",
+      "id": 6
     }
   ]
 }

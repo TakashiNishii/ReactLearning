@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "name": "Fone JBL",
+      "price": "350.00",
+      "id": 1
+    },
+    {
+      "name": "Microfone Red Dragon",
+      "price": "0.00",
+      "id": 2
+    },
+    {
+      "name": "Cadeira gamer",
+      "price": "2000.00",
+      "id": 3
+    }
+  ]
+}

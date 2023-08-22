@@ -8,7 +8,6 @@ const Product = () => {
 
   const { data: product, loading, error } = useFetch(url);
 
-  console.log(product);
   return (
     <>
       <p>ID do produto: {id}</p>

@@ -1,5 +1,15 @@
 // 1- Criar context
 import { createContext, useState } from "react";
 
-// eslint-disable-next-line no-undef
-export default CounterContext = createContext();
+export const CounterContext = createContext();
+
+// 2- Criar provider
+export const CounterContextProvider = ({ children }) => {
+  const [counter, setCounter] = useState(5);
+
+  return (
+    <CounterContext.Provider value={{ counter, setCounter }}>
+      {children}
+    </CounterContext.Provider>
+  );
+};

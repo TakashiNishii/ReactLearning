@@ -3,7 +3,7 @@ import styles from "./EditPost.module.css";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
-import { useInsertDocument } from "../../hooks/useInsertDocument";
+import { useUpdateDocument } from "../../hooks/useUpdateDocument";
 import { useFetchDocument } from "../../hooks/useFetchDocument";
 
 const EditPost = () => {
@@ -27,7 +27,7 @@ const EditPost = () => {
 
   const { user } = useAuthValue();
 
-  const { insertDocument, response } = useInsertDocument("posts");
+  const { updateDocument, response } = useUpdateDocument("posts");
 
   const navigate = useNavigate();
 
@@ -52,17 +52,19 @@ const EditPost = () => {
 
     if (formError) return;
 
-    insertDocument({
+    const data = {
       title,
       image,
       body,
       tagsArray,
       uid: user.uid,
       createdBy: user.displayName,
-    });
+    };
+
+    updateDocument(id, data);
 
     // redirect to home page
-    navigate("/");
+    navigate("/dashboard");
   };
 
   return (
@@ -127,7 +129,7 @@ const EditPost = () => {
             </label>
 
             {!response.loading ? (
-              <button className="btn">Cadastrar</button>
+              <button className="btn">Editar</button>
             ) : (
               <button className="btn" disabled>
                 Aguarde...

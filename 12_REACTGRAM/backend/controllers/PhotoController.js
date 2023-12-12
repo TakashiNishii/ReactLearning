@@ -30,6 +30,43 @@ const insertPhoto = async (req, res) => {
   res.status(201).json(newPhoto);
 };
 
+const deletePhoto = async (req, res) => {
+  const { id } = req.params;
+
+  const reqUser = req.user;
+
+  try {
+    const photo = await Photo.findById(id);
+
+    // check if photo exists
+    if (!photo) {
+      return res.status(404).json({
+        errors: ["Foto não encontrada!"],
+      });
+    }
+
+    // check if photo belongs to user
+    if (!photo.userId.equals(reqUser.id)) {
+      return res.status(422).json({
+        errors: ["Ocorreu um erro, porfavor tente novamente mais tarde."],
+      });
+    }
+
+    await Photo.findByIdAndDelete(photo._id);
+
+    res.status(200).json({
+      id: photo._id,
+      message: "Foto deletada com sucesso!",
+    });
+  } catch (error) {
+    res.status(404).json({
+      errors: ["Foto não encontrada!"],
+    });
+    return;
+  }
+};
+
 module.exports = {
   insertPhoto,
+  deletePhoto,
 };

@@ -1,8 +1,8 @@
 import "./Message.css";
-const Message = ({ msg, type }) => {
+const Message = ({ message, type }) => {
   return (
     <div className={`message ${type}`}>
-      <p>{msg}</p>
+      <p>{message}</p>
     </div>
   );
 };

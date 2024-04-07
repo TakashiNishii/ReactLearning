@@ -130,8 +130,8 @@ const EditProfile = () => {
         </label>
         {!loading && <input type="submit" value="Atualizar" />}
         {loading && <input type="submit" value="Aguarde..." disabled />}
-        {error && <Message type="error" msg={error} />}
-        {message && <Message type="success" msg={message} />}
+        {error && <Message type="error" message={error} />}
+        {message && <Message type="success" message={message} />}
       </form>
     </div>
   );

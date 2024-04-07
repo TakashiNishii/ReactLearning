@@ -69,7 +69,7 @@ const Register = () => {
         />
         {!loading && <input type="submit" value="Cadastrar" />}
         {loading && <input type="submit" value="Aguarde..." disabled />}
-        {error && <Message type="error" msg={error} />}
+        {error && <Message type="error" message={error} />}
       </form>
       <p>
         Já tem conta? <Link to="/login">Clique aqui.</Link>

@@ -166,9 +166,11 @@ const likePhoto = async (req, res) => {
   await photo.save();
 
   res.status(200).json({
-    photoId: id,
-    userId: reqUser.id,
-    message: "Foto curtida com sucesso!",
+    photo: {
+      photoId: id,
+      userId: reqUser.id,
+      message: "Foto curtida com sucesso!",
+    },
   });
 };
 

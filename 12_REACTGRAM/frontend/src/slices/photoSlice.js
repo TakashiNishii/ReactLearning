@@ -214,12 +214,12 @@ export const photoSlice = createSlice({
         state.error = null;
 
         if (state.photo.likes) {
-          state.photo.likes.push(action.payload.userId);
+          state.photo.likes?.push(action.payload.userId);
         }
 
         state.photos.map((photo) => {
           if (photo._id === action.payload.photo.photoID) {
-            return photo.likes.push(action.payload.userId);
+            return photo.likes?.push(action.payload.userId);
           }
           return photo;
         });

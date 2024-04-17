@@ -12,7 +12,7 @@ import LikeContainer from "../../components/LikeContainer";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { useResetComponentMessage } from "../../hooks/useResetComponent";
+import { useResetComponentMessage } from "../../hooks/useResetComponentMessage";
 
 // Redux
 import { comment, getPhoto, like } from "../../slices/photoSlice";
